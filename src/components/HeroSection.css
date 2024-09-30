@@ -1,0 +1,355 @@
+/* Hero Section */
+.hero {
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(245, 236, 236); /* Set text color to white for contrast */
+    padding: 40px; /* Add padding for internal spacing */
+}
+
+.hero-title {
+    font-size: 3rem; /* Adjusted font size */
+    font-weight: bold;
+    margin: 0; /* Remove default margin */
+}
+
+.hero-subtitle {
+    font-size: 1.5rem; /* Adjusted font size */
+    margin: 10px 0; /* Add margin for spacing */
+}
+
+.upcoming-events-button {
+    padding: 20px 30px; /* Adjust padding for height and width */
+    background-color: hwb(47 31% 13%); /* Light yellow background */
+    color: #000; /* Black text color */
+    border: 5px solid hwb(47 31% 13%); /* Yellow border */
+    font-size: 1rem; /* Larger text */
+    font-weight: bold; /* Make the text bold */
+    border-radius: 1px; /* Rounded edges */
+    cursor: pointer;
+    transition: background-color 0.7s ease, color 0.7s ease, border-color 0.7s ease; /* Smooth transition effect */
+    margin-bottom: 20px; /* Add bottom margin for spacing */
+}
+
+.upcoming-events-button:hover {
+    background-color: hwb(0 19% 80% / 0.5); /* Blackish-transparent background on hover */
+    color: #f7e08d; /* Yellow text color on hover */
+    border-color: hwb(47 31% 13%); /* Yellow border on hover */
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem 0;
+    margin-bottom: 20px;
+}
+
+.feature-icon-container {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px; /* Width of the hexagon */
+    height: 150px; /* Height of the hexagon */
+    background-color: rgb(19, 19, 19); /* Default background color */
+    color: white; /* Icon color */
+    clip-path: polygon(
+        50% 0%,    /* Top point */
+        100% 25%,  /* Upper right corner */
+        100% 75%,  /* Lower right corner */
+        50% 100%,  /* Bottom point */
+        0% 75%,    /* Lower left corner */
+        0% 25%     /* Upper-left edge */
+    ); /* Hexagon with rounded/blunt corners */
+    transition: transform 0.7s ease, background-color 0.7s ease; /* Transition effect for hover */
+}
+
+.feature-icon-container:first-child {
+    margin-left: 60px; /* Adjust this value to control spacing */
+}
+
+.feature-icon-container:not(:first-child) {
+    margin-left: 30px; /* Adjust this value to control spacing between other icons */
+}
+
+.feature-icon-container:hover {
+    background-color: red; /* Change background color to red on hover */
+    color: white; /* Ensure icon stays white on hover */
+    transform: rotate(40deg); /* Rotate hexagon by 40 degrees on hover */
+}
+
+.feature-icon-container:not(:hover) {
+    background-color: rgb(18, 3, 3); /* Default color */
+    color: white; /* Ensure icon stays white */
+    transform: rotate(0deg); /* Reset rotation */
+}
+
+.feature-icon {
+    font-size: 4rem; /* Increased font size */
+    color: #f1eded; /* Icon color */
+    margin-bottom: 1rem; /* Space below the icon */
+}
+
+h3 {
+    margin-left: 1.8rem;
+    margin-top: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.feature p {
+    margin-left: 1.8rem;
+    margin-top: 0.5rem;
+    color: #666;
+}
+
+/* Event Categories Section */
+.event-categories {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.event-categories h2 {
+    margin: 0 15px;
+    cursor: pointer;
+    color: black; /* Initially black */
+    transition: color 0.5s ease, text-decoration 0.3s ease; /* Smooth transition for color and underline */
+}
+
+.event-categories h2:hover {
+    color: red; /* Change to red on hover */
+    text-decoration: underline; /* Underline the text on hover */
+}
+
+.event-categories h2.active {
+    color: red; /* Change to red when active */
+    text-decoration: underline; /* Underline the text when active */
+}
+
+/* Event Cards Section */
+.event-cards {
+    margin-left: 5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+    justify-content: end; /* Align the event cards to the right */
+}
+
+.event-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    width: 300px; /* Fixed width for event cards */
+    position: relative; /* Ensure image scaling is relative to card */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items in the card */
+    text-align: left; /* Text starts from the left */
+}
+
+.event-card img {
+    width: 100%;
+    height: 200px; /* Set a fixed height for images */
+    object-fit: cover; /* Ensures images fit within the event card without distortion */
+    transition: transform 0.5s ease, margin 0.3s ease; /* Add smooth scaling transition */
+}
+
+.event-card:hover img {
+    transform: scale(1.2); /* Scale image by 10% on hover */
+}
+
+/* Add spacing to event info on hover */
+.event-card:hover .event-info {
+    margin-top: 10px; /* Add margin to create spacing */
+}
+
+/* Keep padding minimal */
+.event-info {
+    padding: 8px 12px; /* Minimize spacing for the text */
+    text-align: left;
+    width: 100%; /* Ensure the text takes full width */
+    transition: margin 0.3s ease; /* Smooth transition for margin */
+}
+
+.event-info h3 {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.event-info p {
+    font-size: 14px;
+    margin: 2px 0; /* Minimize the margins */
+}
+
+/* Hover effect for event cards */
+.event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Centered Details Button */
+.details-btn {
+    padding: 10px 20px;
+    background-color: #FF6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px; /* Add some spacing between the text and the button */
+    margin-left: auto;
+    margin-right: auto; /* Center the button horizontally */
+    display: block;
+}
+
+.details-btn:hover {
+    background-color: #FF4500;
+}
+
+/* Hover effect for event cards */
+.event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Styling */
+.details-btn, .see-all-btn {
+    padding: 10px 20px;
+    background-color: #FF6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.details-btn:hover, .see-all-btn:hover {
+    background-color: #FF4500;
+}
+
+.see-all-btn {
+    margin-top: 20px;
+}
+
+/* Event Details Modal */
+/* Event Details Modal */
+.event-details-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.event-details-box {
+    background-color: white;
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-details-content {
+    display: flex;
+    align-items: flex-start;
+}
+
+.details-image {
+    width: 600px;
+    height: 350px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.event-details-text {
+    flex-grow: 1;
+}
+
+/* Centered Close Button */
+.close-btn {
+    background-color: #ff5c5c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto; /* This centers the button */
+    display: block;
+    text-align: center;
+}
+
+.close-btn:hover {
+    background-color: #ff4040;
+}
+
+/* Footer */
+.footer {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-link:hover {
+    color: #f39c12; /* Change the color on hover */
+}
+
+.footer-icons {
+    margin-top: 20px;
+}
+
+.social-icon {
+    color: white;
+    margin: 0 10px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #f39c12; /* Hover effect for icons */
+}
+
